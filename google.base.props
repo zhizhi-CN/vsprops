@@ -1,19 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-
-  <!-- 控制编译输出路径 -->
-  <PropertyGroup>    
-    <OutDir>$(SolutionDir)\build\$(Configuration)\bin\</OutDir>
-    <IntDir>$(SolutionDir)\build\$(Configuration)\obj_$(PlatformTarget)\$(ProjectName)\</IntDir>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <TargetName>$(ProjectName)_x64</TargetName>
-  </PropertyGroup>  
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <TargetName>$(ProjectName)_x64</TargetName>
-  </PropertyGroup>
-
   <!-- 配置包含googlebase库头文件 -->  
   <PropertyGroup>
     <IncludePath>$(CHROMIUM_BASE);$(IncludePath)</IncludePath>      
@@ -36,7 +22,7 @@
   <!-- 配置程序运行支持库 -->
   <ItemDefinitionGroup>
     <Link>
-      <AdditionalDependencies>base.lib;base_paths.lib;base_static.lib;base_i18n.lib;icui18n.lib;icuuc.lib;boringssl.lib;chromium_sqlite3.lib;compression_utils.lib;crcrypto.lib;dynamic_annotations.lib;gmock.lib;gtest.lib;ipc.lib;libxml2.lib;minizip.lib;prefs.lib;sql.lib;zip.lib;Psapi.lib;ws2_32.lib;version.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>base.lib;base_paths.lib;base_static.lib;base_i18n.lib;icui18n.lib;icuuc.lib;boringssl.lib;chromium_sqlite3.lib;compression_utils.lib;crcrypto.lib;dynamic_annotations.lib;gmock.lib;gtest.lib;ipc.lib;libxml2.lib;minizip.lib;prefs.lib;sql.lib;zip.lib;Psapi.lib;ws2_32.lib;version.lib;protobuf_lite.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(ConfigurationType)'=='Application'">
