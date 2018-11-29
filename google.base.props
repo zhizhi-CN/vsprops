@@ -24,6 +24,9 @@
     <Link>
       <AdditionalDependencies>base.lib;base_paths.lib;base_static.lib;base_i18n.lib;icui18n.lib;icuuc.lib;boringssl.lib;chromium_sqlite3.lib;compression_utils.lib;crcrypto.lib;dynamic_annotations.lib;gmock.lib;gtest.lib;ipc.lib;libxml2.lib;minizip.lib;prefs.lib;sql.lib;zip.lib;Psapi.lib;ws2_32.lib;version.lib;protobuf_lite.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <ClCompile>
+        <DisableSpecificWarnings>4244;4018</DisableSpecificWarnings>
+    </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(ConfigurationType)'=='Application'">
     <Link>
