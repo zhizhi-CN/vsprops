@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>$(LIBUCURL)\builds\libcurl-vc14-x86-debug-static-ipv6-sspi-winssl\include;$(IncludePath)</IncludePath>
+	<LibraryPath>$(LIBUCURL)\builds\libcurl-vc14-x86-debug-static-ipv6-sspi-winssl\lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <IncludePath>$(LIBUCURL)\builds\libcurl-vc14-x86-release-static-ipv6-sspi-winssl\include;$(IncludePath)</IncludePath>
+	<LibraryPath>$(LIBUCURL)\builds\libcurl-vc14-x86-release-static-ipv6-sspi-winssl\lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>  
+  
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <IncludePath>$(LIBUCURL)\builds\libcurl-vc14-x64-debug-static-ipv6-sspi-winssl\include;$(IncludePath)</IncludePath>
+	<LibraryPath>$(LIBUCURL)\builds\libcurl-vc14-x64-debug-static-ipv6-sspi-winssl\lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <IncludePath>$(LIBUCURL)\builds\libcurl-vc14-x64-release-static-ipv6-sspi-winssl\include;$(IncludePath)</IncludePath>
+	<LibraryPath>$(LIBUCURL)\builds\libcurl-vc14-x64-release-static-ipv6-sspi-winssl\lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup> 
+  
+  <!-- 配置程序运行支持库 -->
+  <ItemDefinitionGroup Condition="'$(Configuration)'=='Debug'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <PreprocessorDefinitions>CURL_STATICLIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>libcurl_a_debug.lib;ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  
+  <ItemDefinitionGroup Condition="'$(Configuration)'=='Release'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <PreprocessorDefinitions>CURL_STATICLIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>  
+    <Link>
+      <AdditionalDependencies>libcurl_a.lib;ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+</Project>
