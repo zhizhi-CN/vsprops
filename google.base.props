@@ -34,6 +34,11 @@
       <DelayLoadDLLs>shell32.dll</DelayLoadDLLs>
     </Link>
   </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(ConfigurationType)'=='DynamicLibrary'">
+    <Link>
+      <DelayLoadDLLs>shell32.dll</DelayLoadDLLs>
+    </Link>
+  </ItemDefinitionGroup>
   
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
