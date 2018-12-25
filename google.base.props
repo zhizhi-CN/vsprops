@@ -39,6 +39,12 @@
       <DelayLoadDLLs>shell32.dll</DelayLoadDLLs>
     </Link>
   </ItemDefinitionGroup>
+
+  <ItemDefinitionGroup>
+    <ClCompile>  
+	  <AdditionalOptions>/Zc:threadSafeInit- %(AdditionalOptions)</AdditionalOptions>
+	</ClCompile>
+  </ItemDefinitionGroup>
   
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
